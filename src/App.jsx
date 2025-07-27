@@ -1,12 +1,14 @@
-import './App.css'
 import { Route, Routes } from 'react-router-dom'
-import Home from './pages/client/Home'
-import Tour from './pages/client/Tour'
-import About from './pages/client/About'
-import Error404 from './pages/client/Error404'
+import './styles/main.scss'
+import Home from './client/pages/Home'
+import Tour from './client/pages/Tour'
+import About from './client/pages/About'
+import Error404 from './client/pages/Error404'
+import LayoutDefault from './client/layout/LayoutDefault'
 function App() {
   return (
     <>
+      <LayoutDefault />
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/tours" element={<Tour />} />
