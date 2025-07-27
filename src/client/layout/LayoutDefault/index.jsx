@@ -1,3 +1,4 @@
+import { Outlet } from 'react-router-dom'
 import Footer from '../../partials/Footer'
 import Header from '../../partials/Header'
 
@@ -11,7 +12,9 @@ function LayoutDefault() {
           marginTop: '150px',
           padding: '80px',
         }}
-      ></main>
+      >
+        <Outlet />
+      </main>
       <Footer />
     </>
   )
