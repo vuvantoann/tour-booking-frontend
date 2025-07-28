@@ -1,5 +1,11 @@
+import Products from '../../components/Products'
+
 function Tour() {
-  return <> Page Tour</>
+  return (
+    <>
+      <Products />
+    </>
+  )
 }
 
 export default Tour
