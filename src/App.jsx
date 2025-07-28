@@ -12,6 +12,9 @@ import BlogNews from './client/pages/Blog/BlogNews'
 import BlogRelated from './client/pages/Blog/BlogRelated'
 import BlogAll from './client/pages/Blog/BlogAll'
 import BlogDetail from './client/pages/Blog/BlogDetail'
+import Login from './client/pages/Login'
+import InForUser from './client/pages/InForUser'
+import PrivateRoutes from './client/components/PrivateRoutes'
 function App() {
   return (
     <>
@@ -28,6 +31,10 @@ function App() {
             <Route path=":_id" element={<BlogDetail />} />
           </Route>
           <Route path="/contact" element={<Contact />} />
+          <Route path="/login" element={<Login />} />
+          <Route element={<PrivateRoutes />}>
+            <Route path="/info-user" element={<InForUser />} />
+          </Route>
           <Route path="*" element={<Error404 />} />
         </Route>
       </Routes>
