@@ -25,7 +25,7 @@ function App() {
             <Route index element={<BlogAll />} />
             <Route path="/blog/news" element={<BlogNews />} />
             <Route path="/blog/related" element={<BlogRelated />} />
-            <Route path=":id" element={<BlogDetail />} />
+            <Route path=":_id" element={<BlogDetail />} />
           </Route>
           <Route path="/contact" element={<Contact />} />
           <Route path="*" element={<Error404 />} />
