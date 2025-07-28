@@ -1,4 +1,5 @@
 @use '../../../styles/variables' as *;
+
 .header {
   width: 100vw;
   position: absolute;
@@ -24,42 +25,91 @@
   }
 
   .header__nav {
-    display: flex;
-    align-items: center;
-    gap: 30px;
     flex: 1;
 
-    .nav__link {
-      color: $color-text-main;
-      text-decoration: none;
-      font-size: 16px;
-      position: relative;
-      transition: color 0.3s;
-
-      &.active {
-        font-weight: bold;
-
-        &::after {
-          content: '';
-          position: absolute;
-          bottom: -5px;
-          left: 0;
-          width: 100%;
-          height: 2px;
-          background-color: $color-success; // màu gạch chân vàng
-        }
-      }
-
-      &:hover {
-        color: $color-success;
-      }
-    }
-
-    .nav__icon {
-      font-size: 18px;
-      cursor: pointer;
+    .nav__list {
       display: flex;
       align-items: center;
+      gap: 30px;
+      list-style: none;
+      margin: 0;
+      padding: 0;
+
+      li {
+        position: relative;
+
+        .nav__link {
+          color: $color-text-main;
+          text-decoration: none;
+          font-size: 16px;
+          transition: color 0.3s;
+          padding: 5px 0;
+          display: inline-block;
+
+          &.active {
+            font-weight: bold;
+
+            &::after {
+              content: '';
+              position: absolute;
+              bottom: -5px;
+              left: 0;
+              width: 100%;
+              height: 2px;
+              background-color: $color-success;
+            }
+          }
+
+          &:hover {
+            color: $color-success;
+          }
+        }
+
+        // submenu
+        &.nav__link--has-submenu {
+          .nav__submenu {
+            position: absolute;
+            top: 100%;
+            left: 0;
+            background: $color-bg-header;
+            padding: 10px 0;
+            min-width: 160px;
+            display: none;
+            flex-direction: column;
+            gap: 5px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+
+            li {
+              padding: 0;
+              list-style-type: none;
+
+              .nav__submenu-link {
+                display: block;
+                padding: 8px 16px;
+                color: $color-text-main;
+                text-decoration: none;
+                transition: background 0.3s, color 0.3s;
+
+                &:hover {
+                  color: $color-success;
+                  background: rgba(255, 255, 255, 0.05);
+                }
+              }
+            }
+          }
+
+          &:hover .nav__submenu {
+            display: flex;
+          }
+        }
+
+        &.nav__icon {
+          font-size: 18px;
+          cursor: pointer;
+          display: flex;
+          align-items: center;
+        }
+      }
     }
   }
 }
