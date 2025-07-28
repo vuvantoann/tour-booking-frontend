@@ -9,7 +9,7 @@ function LayoutDefault() {
       <main
         className="main"
         style={{
-          marginTop: '150px',
+          marginTop: '50px',
           padding: '80px',
         }}
       >

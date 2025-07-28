@@ -10,6 +10,7 @@ import Blog from './client/pages/Blog'
 import Contact from './client/pages/Contact'
 import BlogNews from './client/pages/Blog/BlogNews'
 import BlogRelated from './client/pages/Blog/BlogRelated'
+import BlogAll from './client/pages/Blog/BlogAll'
 function App() {
   return (
     <>
@@ -20,6 +21,7 @@ function App() {
           <Route path="/tours" element={<Tour />} />
           <Route path="/about" element={<About />} />
           <Route path="/blog" element={<Blog />}>
+            <Route index element={<BlogAll />} />
             <Route path="/blog/news" element={<BlogNews />} />
             <Route path="/blog/related" element={<BlogRelated />} />
           </Route>
