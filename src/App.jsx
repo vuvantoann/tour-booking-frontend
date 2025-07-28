@@ -11,6 +11,7 @@ import Contact from './client/pages/Contact'
 import BlogNews from './client/pages/Blog/BlogNews'
 import BlogRelated from './client/pages/Blog/BlogRelated'
 import BlogAll from './client/pages/Blog/BlogAll'
+import BlogDetail from './client/pages/Blog/BlogDetail'
 function App() {
   return (
     <>
@@ -24,6 +25,7 @@ function App() {
             <Route index element={<BlogAll />} />
             <Route path="/blog/news" element={<BlogNews />} />
             <Route path="/blog/related" element={<BlogRelated />} />
+            <Route path=":id" element={<BlogDetail />} />
           </Route>
           <Route path="/contact" element={<Contact />} />
           <Route path="*" element={<Error404 />} />
