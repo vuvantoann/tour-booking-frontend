@@ -12,7 +12,6 @@ function BlogAll() {
       })
   }, [])
 
-  console.log(posts)
   return (
     <>
       <h1>Blog Travel</h1>

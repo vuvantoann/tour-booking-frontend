@@ -1,5 +1,6 @@
 import { useEffect, useState } from 'react'
 import { useParams } from 'react-router-dom'
+import GoBack from '../../components/GoBack'
 function BlogDetail() {
   const params = useParams()
 
@@ -15,6 +16,7 @@ function BlogDetail() {
 
   return (
     <>
+      <GoBack />
       {post && (
         <div>
           <h2>{post.title}</h2>
