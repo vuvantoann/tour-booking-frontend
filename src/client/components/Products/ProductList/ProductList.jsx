@@ -1,9 +1,15 @@
 import { useEffect, useState } from 'react'
 import './ProductList.scss'
+import EditProduct from '../EditProduct/EditProduct'
 function ProductList(props) {
   const { reload } = props
   const [dataTours, setDataTours] = useState([])
 
+  const [editReload, setEditReload] = useState(false)
+
+  const handleReload = () => {
+    setEditReload(!editReload)
+  }
   useEffect(() => {
     const fetchApi = async () => {
       fetch('http://localhost:3000/api/v1/tours')
@@ -14,7 +20,7 @@ function ProductList(props) {
     }
 
     fetchApi()
-  }, [reload])
+  }, [reload, editReload])
 
   return (
     <>
@@ -38,6 +44,7 @@ function ProductList(props) {
                 )}
               </div>
             </div>
+            <EditProduct item={tour} onReload={handleReload} />
           </div>
         ))}
       </div>
