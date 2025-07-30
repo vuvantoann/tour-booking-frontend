@@ -98,9 +98,9 @@ function EditProduct(props) {
       <Modal
         isOpen={modalIsOpen}
         onRequestClose={closeModal}
-        className="modal-content"
-        overlayClassName="modal-overlay"
-        contentLabel="Create Tour"
+        className="create-tour-content"
+        overlayClassName="create-tour-overlay"
+        contentLabel="Edit Tour"
       >
         <h2 className="modal-title">Tạo Tour Mới</h2>
 

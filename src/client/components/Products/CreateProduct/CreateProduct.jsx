@@ -95,8 +95,8 @@ function CreateTour(props) {
       <Modal
         isOpen={modalIsOpen}
         onRequestClose={closeModal}
-        className="modal-content"
-        overlayClassName="modal-overlay"
+        className="create-tour-content"
+        overlayClassName="create-tour-overlay"
         contentLabel="Create Tour"
       >
         <h2 className="modal-title">Tạo Tour Mới</h2>
