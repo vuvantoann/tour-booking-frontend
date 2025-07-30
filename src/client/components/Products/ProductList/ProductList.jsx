@@ -1,6 +1,7 @@
 import { useEffect, useState } from 'react'
 import './ProductList.scss'
 import EditProduct from '../EditProduct/EditProduct'
+import DeleteProduct from '../DeleteProduct/DeleteProduct'
 function ProductList(props) {
   const { reload } = props
   const [dataTours, setDataTours] = useState([])
@@ -45,6 +46,7 @@ function ProductList(props) {
               </div>
             </div>
             <EditProduct item={tour} onReload={handleReload} />
+            <DeleteProduct item={tour} onReload={handleReload} />
           </div>
         ))}
       </div>

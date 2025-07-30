@@ -1,0 +1,74 @@
+.modal-overlay {
+  background-color: rgba(0, 0, 0, 0.4);
+  position: fixed;
+  inset: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+}
+
+.modal-content {
+  background-color: #ffffff;
+  padding: 32px;
+  border-radius: 16px;
+  width: 90%;
+  max-width: 450px;
+  text-align: center;
+  box-shadow: 0 12px 24px rgba(0, 0, 0, 0.15);
+}
+
+.modal-header {
+  .modal-icon {
+    font-size: 48px;
+    color: #f59e0b; // vàng cam cảnh báo
+    margin-bottom: 16px;
+  }
+
+  .modal-title {
+    font-size: 22px;
+    font-weight: 600;
+    color: #1f2937;
+    margin-bottom: 8px;
+  }
+
+  .modal-desc {
+    font-size: 15px;
+    color: #6b7280;
+  }
+}
+
+.modal-actions {
+  display: flex;
+  justify-content: center;
+  margin-top: 24px;
+  gap: 12px;
+
+  .btn {
+    padding: 10px 20px;
+    border-radius: 8px;
+    font-weight: 600;
+    font-size: 15px;
+    cursor: pointer;
+    border: none;
+    transition: 0.2s;
+  }
+
+  .cancel-btn {
+    background-color: #e5e7eb;
+    color: #374151;
+
+    &:hover {
+      background-color: #d1d5db;
+    }
+  }
+
+  .confirm-btn {
+    background-color: #ef4444;
+    color: white;
+
+    &:hover {
+      background-color: #dc2626;
+    }
+  }
+}
