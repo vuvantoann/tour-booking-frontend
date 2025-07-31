@@ -2,6 +2,7 @@ import { useEffect, useState } from 'react'
 import './ProductList.scss'
 import EditProduct from '../EditProduct/EditProduct'
 import DeleteProduct from '../DeleteProduct/DeleteProduct'
+import { getProductList } from '../../../../services/productService'
 function ProductList(props) {
   const { reload } = props
   const [dataTours, setDataTours] = useState([])
@@ -13,11 +14,8 @@ function ProductList(props) {
   }
   useEffect(() => {
     const fetchApi = async () => {
-      fetch('http://localhost:3000/api/v1/tours')
-        .then((res) => res.json())
-        .then((data) => {
-          setDataTours(data.reverse())
-        })
+      const result = await getProductList()
+      setDataTours(result.reverse())
     }
 
     fetchApi()

@@ -3,6 +3,8 @@ import Modal from 'react-modal'
 import '../CreateProduct/CreateProduct.scss'
 import { Notyf } from 'notyf'
 import 'notyf/notyf.min.css' // for React, Vue and Svelte
+import { getCategory } from '../../../../services/categoryService'
+import { editProduct } from '../../../../services/productService'
 
 Modal.setAppElement('#root')
 
@@ -35,11 +37,8 @@ function EditProduct(props) {
 
   useEffect(() => {
     const fetchApi = async () => {
-      fetch('http://localhost:3000/api/v1/categories')
-        .then((res) => res.json())
-        .then((data) => {
-          setDataCategory(data)
-        })
+      const result = await getCategory()
+      setDataCategory(result)
     }
 
     fetchApi()
@@ -57,36 +56,29 @@ function EditProduct(props) {
     }
   }
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault()
 
-    fetch(`http://localhost:3000/api/v1/tours/edit/${item._id}`, {
-      method: 'PATCH',
-      headers: {
-        Accept: 'application/json',
-        'Content-Type': 'application/json',
-      },
-      body: JSON.stringify(formData),
-    })
-      .then((res) => res.json())
-      .then((data) => {
-        setFormData(initialFormData)
-        closeModal()
-        onReload()
-        if (data.code === 200) {
-          const notyf = new Notyf({
-            duration: 2000,
-            position: { x: 'right', y: 'top' },
-          })
-          notyf.success(data.message)
-        } else if (data.code === 400) {
-          const notyf = new Notyf({
-            duration: 3000,
-            position: { x: 'right', y: 'top' },
-          })
-          notyf.error(data.message)
-        }
-      })
+    const result = await editProduct(item._id, formData)
+    console.log(result)
+    if (result) {
+      setFormData(initialFormData)
+      closeModal()
+      onReload()
+      if (result.code === 200) {
+        const notyf = new Notyf({
+          duration: 2000,
+          position: { x: 'right', y: 'top' },
+        })
+        notyf.success(result.message)
+      } else if (result.code === 400) {
+        const notyf = new Notyf({
+          duration: 3000,
+          position: { x: 'right', y: 'top' },
+        })
+        notyf.error(result.message)
+      }
+    }
   }
 
   return (

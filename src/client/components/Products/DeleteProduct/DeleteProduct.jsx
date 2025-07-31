@@ -5,6 +5,7 @@ import './DeleteProduct.scss'
 import { useState } from 'react'
 import { Notyf } from 'notyf'
 import 'notyf/notyf.min.css' // for React, Vue and Svelte
+import { deleteProduct } from '../../../../services/productService'
 
 function DeleteProduct(props) {
   const { item, onReload } = props
@@ -12,28 +13,27 @@ function DeleteProduct(props) {
 
   const openModal = () => setIsOpen(true)
   const closeModal = () => setIsOpen(false)
-  const handleDelete = () => {
-    fetch(`http://localhost:3000/api/v1/tours/delete/${item._id}`, {
-      method: 'DELETE',
-    })
-      .then((res) => res.json())
-      .then((data) => {
-        closeModal()
-        onReload()
-        if (data.code === 200) {
-          const notyf = new Notyf({
-            duration: 2000,
-            position: { x: 'right', y: 'top' },
-          })
-          notyf.success(data.message)
-        } else if (data.code === 400) {
-          const notyf = new Notyf({
-            duration: 3000,
-            position: { x: 'right', y: 'top' },
-          })
-          notyf.error(data.message)
-        }
-      })
+
+  const handleDelete = async () => {
+    const result = await deleteProduct(item._id)
+    console.log(result)
+    if (result) {
+      closeModal()
+      onReload()
+      if (result.code === 200) {
+        const notyf = new Notyf({
+          duration: 2000,
+          position: { x: 'right', y: 'top' },
+        })
+        notyf.success(result.message)
+      } else if (result.code === 400) {
+        const notyf = new Notyf({
+          duration: 3000,
+          position: { x: 'right', y: 'top' },
+        })
+        notyf.error(result.message)
+      }
+    }
   }
 
   return (
