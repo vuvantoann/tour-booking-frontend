@@ -6,16 +6,16 @@ export const getProductList = async () => {
 }
 
 export const createProduct = async (formData) => {
-  const result = await post('api/v1/tours/create', formData)
+  const result = await post('api/v1/admin/tours/create', formData)
   return result
 }
 
 export const editProduct = async (id, formData) => {
-  const result = await patch(`api/v1/tours/edit/${id}`, formData)
+  const result = await patch(`api/v1/admin/tours/edit/${id}`, formData)
   return result
 }
 
 export const deleteProduct = async (id) => {
-  const result = del(`api/v1/tours/delete/${id}`)
+  const result = del(`api/v1/admin/tours/delete/${id}`)
   return result
 }

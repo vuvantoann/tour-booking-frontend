@@ -1,4 +1,4 @@
-import { NavLink } from 'react-router-dom'
+import { Link, NavLink } from 'react-router-dom'
 import { CiSearch } from 'react-icons/ci'
 import './Header.scss'
 
@@ -6,7 +6,9 @@ function Header() {
   return (
     <header className="header">
       <div className="header__container">
-        <div className="header__logo">EXPLORE</div>
+        <div className="header__logo">
+          <Link to="/">EXPLORE</Link>
+        </div>
         <nav className="header__nav">
           <ul className="nav__list">
             <li>
