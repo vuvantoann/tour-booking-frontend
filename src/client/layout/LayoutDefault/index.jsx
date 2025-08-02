@@ -7,11 +7,11 @@ function LayoutDefault() {
     <>
       <Header />
       <main
-        className="main"
-        style={{
-          marginTop: '50px',
-          padding: '80px',
-        }}
+      // className="main"
+      // style={{
+      //   marginTop: '50px',
+      //   padding: '80px',
+      // }}
       >
         <Outlet />
       </main>

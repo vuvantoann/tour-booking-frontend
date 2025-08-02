@@ -7,9 +7,26 @@
   left: 0;
   z-index: 999;
   padding: 20px 40px;
-  background: $color-bg-header;
-  color: $color-text-main;
+
   font-family: sans-serif;
+
+  &.transparent {
+    background-color: transparent;
+    color: $color-white;
+
+    .nav__link {
+      color: $color-white;
+    }
+  }
+
+  &.solid {
+    background-color: $color-bg-header;
+    color: $color-black;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+    .nav__link {
+      color: $color-black;
+    }
+  }
 
   .header__container {
     display: flex;
@@ -39,7 +56,6 @@
         position: relative;
 
         .nav__link {
-          color: $color-text-main;
           text-decoration: none;
           font-size: 16px;
           transition: color 0.3s;

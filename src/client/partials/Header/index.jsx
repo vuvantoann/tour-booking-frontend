@@ -1,10 +1,12 @@
-import { Link, NavLink } from 'react-router-dom'
+import { Link, NavLink, useLocation } from 'react-router-dom'
 import { CiSearch } from 'react-icons/ci'
 import './Header.scss'
 
 function Header() {
+  const location = useLocation()
+  const isHome = location.pathname === '/'
   return (
-    <header className="header">
+    <header className={isHome ? 'header transparent' : 'header solid'}>
       <div className="header__container">
         <div className="header__logo">
           <Link to="/">EXPLORE</Link>

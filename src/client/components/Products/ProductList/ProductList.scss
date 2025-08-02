@@ -1,5 +1,10 @@
 @use '../../../../styles/variables' as *;
 
+.product-wrapper {
+  padding: 80px;
+  background: $color-bg-body;
+}
+
 .product_title {
   font-size: 2rem;
   font-weight: bold;
@@ -12,7 +17,6 @@
   grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
   gap: 24px;
   padding: 20px;
-  background: #eef4fa;
 }
 
 .product-card {
