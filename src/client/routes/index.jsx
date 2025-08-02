@@ -13,6 +13,8 @@ import Error404 from '../../client/pages/Error404'
 import PrivateRoutes from '../components/PrivateRoutes'
 import InForUser from '../../client/pages/InForUser'
 import Login from '../../client/pages/Login'
+import ToursByCategory from '../pages/Tour/ToursByCategory'
+import TourAll from '../pages/Tour/TourAll'
 
 export const routes = [
   {
@@ -30,7 +32,18 @@ export const routes = [
       {
         path: 'tours',
         element: <Tour />,
+        children: [
+          {
+            index: true,
+            element: <TourAll />,
+          },
+          {
+            path: ':slug',
+            element: <ToursByCategory />,
+          },
+        ],
       },
+
       {
         path: 'about',
         element: <About />,

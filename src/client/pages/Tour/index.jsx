@@ -1,9 +1,9 @@
-import Products from '../../components/Products'
+import { Outlet } from 'react-router-dom'
 
 function Tour() {
   return (
     <>
-      <Products />
+      <Outlet />
     </>
   )
 }
