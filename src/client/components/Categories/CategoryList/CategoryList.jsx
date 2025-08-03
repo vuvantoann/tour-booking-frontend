@@ -1,7 +1,8 @@
 import { useEffect, useState } from 'react'
 import './CategoryList.scss'
-import { getCategory } from '../../../../services/categoryService'
+
 import { Link } from 'react-router-dom'
+import { getCategory } from '../../../services/categoryService'
 
 function CategoryList() {
   const [dataCategory, setDataCategory] = useState([])

@@ -5,7 +5,7 @@ import './DeleteProduct.scss'
 import { useState } from 'react'
 import { Notyf } from 'notyf'
 import 'notyf/notyf.min.css' // for React, Vue and Svelte
-import { deleteProduct } from '../../../../services/productService'
+import { deleteProduct } from '../../../services/productService'
 
 function DeleteProduct(props) {
   const { item, onReload } = props

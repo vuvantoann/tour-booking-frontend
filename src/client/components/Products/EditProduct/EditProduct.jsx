@@ -3,8 +3,8 @@ import Modal from 'react-modal'
 import '../CreateProduct/CreateProduct.scss'
 import { Notyf } from 'notyf'
 import 'notyf/notyf.min.css' // for React, Vue and Svelte
-import { getCategory } from '../../../../services/categoryService'
-import { editProduct } from '../../../../services/productService'
+import { getCategory } from '../../../services/categoryService'
+import { editProduct } from '../../../services/productService'
 
 Modal.setAppElement('#root')
 

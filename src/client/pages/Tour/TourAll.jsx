@@ -1,6 +1,7 @@
 import { useEffect, useState } from 'react'
-import { getProductList } from '../../../services/productService'
+
 import ProductList from '../../components/Products/ProductList/ProductList'
+import { getProductList } from '../../services/productService'
 
 function TourAll() {
   const [tours, setTours] = useState([])

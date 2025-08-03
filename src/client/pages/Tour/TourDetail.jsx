@@ -1,8 +1,8 @@
 import { useEffect, useState } from 'react'
-import { getProductDetail } from '../../../services/productService'
 
 import ProductDetail from '../../components/Products/ProductDetail'
 import { useParams } from 'react-router-dom'
+import { getProductDetail } from '../../services/productService'
 
 function TourDetail() {
   const { slug } = useParams()

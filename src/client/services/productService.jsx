@@ -1,4 +1,4 @@
-import { del, get, patch, post } from '../utils/request'
+import { del, get, patch, post } from '../../utils/request'
 
 export const getProductList = async () => {
   const result = get('api/v1/tours')

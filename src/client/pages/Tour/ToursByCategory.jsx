@@ -1,7 +1,8 @@
 import { useEffect, useState } from 'react'
 import { useParams } from 'react-router-dom'
-import { getProductListByCategory } from '../../../services/productService'
+
 import ProductList from '../../components/Products/ProductList/ProductList'
+import { getProductListByCategory } from '../../services/productService'
 
 function ToursByCategory() {
   const { slug } = useParams()
