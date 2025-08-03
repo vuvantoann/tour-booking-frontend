@@ -11,7 +11,7 @@ function ProductList(props) {
         <div className="product-list">
           {tours.map((tour) => (
             <div className="product-card" key={tour._id}>
-              <Link to={`/tours/${tour.slug}`}>
+              <Link to={`/tours/detail/${tour.slug}`}>
                 <div className="product-card__image">
                   <img src={tour.images[0]} alt={tour.title} />
                 </div>
@@ -19,9 +19,18 @@ function ProductList(props) {
                   <h3 className="product-card__title">{tour.title}</h3>
                   <p className="product-card__desc">{tour.information}</p>
                   <div className="product-card__bottom">
-                    <span className="product-card__price">
-                      ₹ {tour.price.toLocaleString()}
-                    </span>
+                    <div className="product-card__price">
+                      <span className="product-card__price--current">
+                        ₹{' '}
+                        {(
+                          (tour.price * (100 - tour.discount)) /
+                          100
+                        ).toLocaleString()}
+                      </span>
+                      <span className="product-card__price--old">
+                        ₹ {tour.price.toLocaleString()}
+                      </span>
+                    </div>
                     {tour.discount > 0 && (
                       <span className="product-card__discount">
                         -{tour.discount}%

@@ -1,0 +1,161 @@
+.tour-detail {
+  max-width: 1200px;
+  margin: 150px auto;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 2rem;
+  padding: 0 80px;
+
+  &__left {
+    flex: 1;
+    min-width: 300px;
+  }
+
+  &__main-image {
+    width: 100%;
+    aspect-ratio: 4 / 3;
+
+    img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      border-radius: 12px;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    }
+  }
+
+  &__thumbnail-slider {
+    margin-top: 1rem;
+
+    .swiper {
+      padding: 0.5rem 0;
+    }
+  }
+
+  &__thumbnail {
+    width: 100%;
+    height: 80px;
+    object-fit: cover;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: transform 0.2s ease, border 0.2s;
+    border: 2px solid transparent;
+
+    &:hover {
+      transform: scale(1.05);
+    }
+
+    &--active {
+      border: 2px solid #2e7d32;
+    }
+  }
+
+  &__right {
+    flex: 1;
+    min-width: 300px;
+  }
+
+  &__title {
+    font-size: 2rem;
+    font-weight: bold;
+    margin-bottom: 1rem;
+    color: #2e7d32;
+  }
+
+  &__code,
+  &__date,
+  &__seats {
+    margin: 0.5rem 0;
+    font-size: 1rem;
+    color: #555;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+
+    svg {
+      color: #2e7d32;
+    }
+  }
+
+  &__price {
+    margin: 1.5rem 0;
+
+    &--current {
+      font-size: 1.8rem;
+      font-weight: bold;
+      color: #e53935;
+      margin-left: 0.5rem;
+    }
+
+    &--old {
+      font-size: 1.2rem;
+      text-decoration: line-through;
+      color: #999;
+    }
+  }
+
+  &__discount {
+    color: #388e3c;
+    font-weight: 600;
+    font-size: 1rem;
+    margin-bottom: 1rem;
+  }
+
+  &__add-to-cart {
+    display: flex;
+    gap: 1rem;
+    margin-top: 1.5rem;
+
+    input {
+      width: 60px;
+      padding: 0.4rem;
+      font-size: 1rem;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+    }
+
+    button {
+      background-color: #2e7d32;
+      color: white;
+      padding: 0.6rem 1.2rem;
+      font-size: 1rem;
+      border: none;
+      border-radius: 6px;
+      cursor: pointer;
+      transition: background-color 0.2s;
+
+      &:hover {
+        background-color: #1b5e20;
+      }
+    }
+  }
+
+  &__section {
+    padding: 1.5rem 0;
+    border-bottom: 1px solid #ddd;
+
+    &-title {
+      font-size: 1.2rem;
+      font-weight: 600;
+      margin-bottom: 0.75rem;
+      position: relative;
+      color: #333;
+
+      &::after {
+        content: '';
+        position: absolute;
+        right: 0;
+        top: 50%;
+        width: 20px;
+        height: 1px;
+        background: #999;
+      }
+    }
+
+    &-content {
+      font-size: 1rem;
+      color: #555;
+      line-height: 1.6;
+    }
+  }
+}

@@ -15,6 +15,7 @@ import InForUser from '../../client/pages/InForUser'
 import Login from '../../client/pages/Login'
 import ToursByCategory from '../pages/Tour/ToursByCategory'
 import TourAll from '../pages/Tour/TourAll'
+import TourDetail from '../pages/Tour/TourDetail'
 
 export const routes = [
   {
@@ -40,6 +41,10 @@ export const routes = [
           {
             path: ':slug',
             element: <ToursByCategory />,
+          },
+          {
+            path: 'detail/:slug',
+            element: <TourDetail />,
           },
         ],
       },

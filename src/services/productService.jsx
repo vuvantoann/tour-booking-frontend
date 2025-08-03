@@ -10,6 +10,11 @@ export const getProductListByCategory = async (slug) => {
   return result
 }
 
+export const getProductDetail = async (slug) => {
+  const result = get(`api/v1/tours/detail/${slug}`)
+  return result
+}
+
 export const createProduct = async (formData) => {
   const result = await post('api/v1/admin/tours/create', formData)
   return result

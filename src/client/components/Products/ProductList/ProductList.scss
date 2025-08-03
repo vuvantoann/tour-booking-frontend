@@ -77,9 +77,18 @@
   }
 
   &__price {
-    color: #f37021;
-    font-size: 16px;
-    font-weight: bold;
+    &--current {
+      color: #f37021;
+      font-size: 16px;
+      font-weight: bold;
+    }
+
+    &--old {
+      margin-left: 5px;
+      font-size: 14px;
+      text-decoration: line-through;
+      color: #999;
+    }
   }
 
   &__discount {
