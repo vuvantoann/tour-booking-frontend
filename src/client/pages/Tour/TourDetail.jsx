@@ -6,7 +6,7 @@ import { getProductDetail } from '../../services/productService'
 
 function TourDetail() {
   const { slug } = useParams()
-  console.log(slug)
+
   const [tourDetail, setTourDetail] = useState(null)
 
   useEffect(() => {
@@ -18,7 +18,6 @@ function TourDetail() {
     fetchApi()
   }, [slug])
 
-  console.log(tourDetail)
   return (
     <>
       {tourDetail ? (

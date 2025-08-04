@@ -3,7 +3,26 @@ import { FaCalendarAlt, FaUsers } from 'react-icons/fa'
 import { Swiper, SwiperSlide } from 'swiper/react'
 import 'swiper/css'
 import './ProductDetail.scss'
+import { useDispatch, useSelector } from 'react-redux'
+import { addToCart, updateQuantity } from '../../../actions/cart'
+
 function ProductDetail({ tourDetail }) {
+  const cart = useSelector((state) => state.cartReducer)
+
+  const dispatch = useDispatch()
+
+  const handleAddToCard = () => {
+    const alreadyInCart = cart.some(
+      (itemCart) => itemCart._id === tourDetail._id
+    )
+
+    if (alreadyInCart) {
+      dispatch(updateQuantity(tourDetail._id))
+    } else {
+      dispatch(addToCart(tourDetail))
+    }
+  }
+
   const images =
     typeof tourDetail.images === 'string'
       ? JSON.parse(tourDetail.images)
@@ -63,8 +82,8 @@ function ProductDetail({ tourDetail }) {
 
         <p className="tour-detail__discount">Giảm tới {tourDetail.discount}%</p>
         <div className="tour-detail__add-to-cart">
-          <input type="number" min="1" defaultValue={1} />
-          <button>Thêm vào giỏ hàng</button>
+          {/* <input type="number" min="1" defaultValue={1} /> */}
+          <button onClick={handleAddToCard}>Thêm vào giỏ hàng</button>
         </div>
 
         <div className="tour-detail__section">
