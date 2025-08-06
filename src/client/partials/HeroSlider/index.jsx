@@ -11,7 +11,7 @@ const HeroSlider = () => {
       <Swiper
         modules={[Autoplay]}
         speed={1000}
-        autoplay={{ delay: 7000, disableOnInteraction: false }}
+        autoplay={{ delay: 5000, disableOnInteraction: false }}
         pagination={{ clickable: true }}
         loop={true}
         className="hero-swiper"
@@ -19,7 +19,13 @@ const HeroSlider = () => {
         <SwiperSlide>
           <div
             className="slide-bg"
-            style={{ backgroundImage: 'url(/assets/ha-noi-capital.jpg)' }}
+            style={{ backgroundImage: 'url(/assets/Ha-Noi.jpg)' }}
+          ></div>
+        </SwiperSlide>
+        <SwiperSlide>
+          <div
+            className="slide-bg"
+            style={{ backgroundImage: 'url(/assets/da-nang-city.jpeg)' }}
           ></div>
         </SwiperSlide>
         <SwiperSlide>
