@@ -1,5 +1,5 @@
 function About() {
-  return <>Trang About</>
+  return <>PAGE ABOUT</>
 }
 
 export default About

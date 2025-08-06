@@ -1,8 +1,11 @@
 import { useSelector } from 'react-redux'
+import CartList from '../../components/Cart/CartList'
 function Cart() {
-  const cart = useSelector((state) => state.cartReducer)
-
-  return <> Page Cart</>
+  return (
+    <>
+      <CartList />
+    </>
+  )
 }
 
 export default Cart

@@ -16,6 +16,9 @@ function cartReducer(state = [], action) {
           : item
       )
 
+    case 'DELETE__ITEM':
+      return state.filter((item) => item._id !== action.id)
+
     default:
       return state
   }

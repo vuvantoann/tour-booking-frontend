@@ -11,3 +11,10 @@ export const updateQuantity = (_id, quantity = 1) => {
     payload: { _id, quantity },
   }
 }
+
+export const deleteItem = (_id) => {
+  return {
+    type: 'DELETE__ITEM',
+    id: _id,
+  }
+}
