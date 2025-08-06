@@ -1,10 +1,13 @@
 .tour-detail {
-  max-width: 1200px;
-  margin: 150px auto;
-  display: flex;
-  flex-wrap: wrap;
-  gap: 2rem;
-  padding: 0 80px;
+  // max-width: 1200px;
+  margin: 150px auto 0;
+  padding: 0 150px;
+
+  &__wrap {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 2rem;
+  }
 
   &__left {
     flex: 1;

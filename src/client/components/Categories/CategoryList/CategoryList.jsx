@@ -19,7 +19,7 @@ function CategoryList() {
   return (
     <>
       <div className="category-wrapper">
-        <h4 className="category_title">Danh sách Tous</h4>
+        <h4 className="category_title">RECOMMENDED TOP TOURS</h4>
         <div className="category-list">
           {dataCategory.map((category) => (
             <div className="category-card" key={category._id}>

@@ -80,10 +80,6 @@ export const routes = [
         element: <Contact />,
       },
       {
-        path: '*',
-        element: <Error404 />,
-      },
-      {
         path: 'login',
         element: <Login />,
       },
@@ -102,5 +98,9 @@ export const routes = [
         element: <Cart />,
       },
     ],
+  },
+  {
+    path: '*',
+    element: <Error404 />,
   },
 ]

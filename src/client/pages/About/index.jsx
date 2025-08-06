@@ -1,5 +1,11 @@
+import PageHeader from '../../components/PageHeader/PageHeader'
+
 function About() {
-  return <>PAGE ABOUT</>
+  return (
+    <>
+      <PageHeader title="PAGE ABOUT" />
+    </>
+  )
 }
 
 export default About

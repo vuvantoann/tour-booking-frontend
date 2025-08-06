@@ -21,7 +21,9 @@ function TourDetail() {
   return (
     <>
       {tourDetail ? (
-        <ProductDetail tourDetail={tourDetail} />
+        <>
+          <ProductDetail tourDetail={tourDetail} />
+        </>
       ) : (
         <div>Đang tải dữ liệu tour...</div>
       )}

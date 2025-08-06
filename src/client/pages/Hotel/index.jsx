@@ -1,5 +1,11 @@
+import PageHeader from '../../components/PageHeader/PageHeader'
+
 function Hotel() {
-  return <> Page Hotel</>
+  return (
+    <>
+      <PageHeader title="PAGE HOTEL" />
+    </>
+  )
 }
 
 export default Hotel

@@ -7,7 +7,7 @@ function ProductList(props) {
   return (
     <>
       <div className="product-wrapper">
-        <h4 className="product_title">Danh sách Tous</h4>
+        <h4 className="product_title">All tours</h4>
         <div className="product-list">
           {tours.map((tour) => (
             <div className="product-card" key={tour._id}>

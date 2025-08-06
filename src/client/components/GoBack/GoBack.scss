@@ -1,0 +1,68 @@
+//Nút vô hình nội dung phát sáng
+.go-back {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 10px 20px;
+  font-size: 16px;
+  font-weight: 500;
+  color: #555; // màu bình thường
+  background-color: transparent;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: color 0.3s ease, text-shadow 0.3s ease, transform 0.2s ease;
+  text-decoration: none;
+
+  &__icon {
+    font-size: 18px;
+    color: inherit;
+    transition: inherit;
+  }
+
+  &:hover {
+    color: #0077cc;
+    text-shadow: 0 0 8px rgba(0, 119, 204, 0.5);
+    transform: translateY(-1px);
+  }
+
+  &:active {
+    transform: translateY(0);
+    text-shadow: 0 0 4px rgba(0, 119, 204, 0.4);
+  }
+}
+
+// // ẩn nội tại nam chính
+// .go-back {
+//   display: inline-flex;
+//   align-items: center;
+//   gap: 8px;
+//   padding: 10px 20px;
+//   font-size: 16px;
+//   font-weight: 500;
+//   color: #555; // 👈 màu chữ mờ nhạt ban đầu
+//   background-color: #fff;
+//   border: 2px solid transparent;
+//   border-radius: 8px;
+//   cursor: pointer;
+//   transition: all 0.3s ease;
+//   text-decoration: none;
+
+//   &__icon {
+//     font-size: 18px;
+//     color: inherit; // 👈 ăn theo màu chữ
+//     transition: inherit;
+//   }
+
+//   &:hover {
+//     color: #0077cc; // 👈 hiện rõ main
+//     border-color: #0077cc;
+//     box-shadow: 0 0 10px 2px rgba(0, 119, 204, 0.4);
+//     transform: translateY(-1px);
+//   }
+
+//   &:active {
+//     transform: translateY(0);
+//     box-shadow: 0 0 6px 1px rgba(0, 119, 204, 0.3);
+//   }
+// }
