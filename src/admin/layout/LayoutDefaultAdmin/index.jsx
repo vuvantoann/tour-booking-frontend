@@ -7,10 +7,10 @@ import {
   MenuFoldOutlined,
   MenuUnfoldOutlined,
   SearchOutlined,
-  MailOutlined,
 } from '@ant-design/icons'
 import { useState } from 'react'
 import { Outlet } from 'react-router-dom'
+import Notification from '../../components/Notification'
 function LayoutDefault() {
   const { Footer, Sider, Content } = Layout
   const [collapsed, setCollapsed] = useState(false)
@@ -45,7 +45,7 @@ function LayoutDefault() {
             </div>
             <div className="header-admin__right">
               <div className="header-admin__bell">
-                <MailOutlined />
+                <Notification />
               </div>
             </div>
           </div>
