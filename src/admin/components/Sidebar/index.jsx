@@ -2,86 +2,99 @@ import { Menu } from 'antd'
 import {
   DashboardOutlined,
   AppstoreOutlined,
-  PieChartOutlined,
-  WhatsAppOutlined,
+  ShoppingCartOutlined,
+  UnorderedListOutlined,
+  PlusOutlined,
+  TagsOutlined,
+  UserOutlined,
+  StarOutlined,
+  ShareAltOutlined,
+  SettingOutlined,
 } from '@ant-design/icons'
-import { Link } from 'react-router-dom'
+// import { Link } from 'react-router-dom'
 function Sidebar() {
   const items = [
     {
-      key: '1',
+      key: 'dashboard',
       icon: <DashboardOutlined />,
       label: 'Dashboard',
-      children: [
-        {
-          key: '/',
-          label: <Link to="/">Default</Link>,
-        },
-        {
-          key: '12',
-          label: 'CRM',
-        },
-        {
-          key: '13',
-          label: 'E-commerce',
-        },
-        {
-          key: '14',
-          label: 'Projects',
-        },
-      ],
     },
     {
-      key: '2',
+      key: 'products',
       icon: <AppstoreOutlined />,
-      label: 'Apps',
+      label: 'Products',
       children: [
         {
-          key: '21',
-          label: 'Chat',
+          key: 'product-list',
+          icon: <UnorderedListOutlined />,
+          label: 'Product List',
         },
         {
-          key: '22',
-          label: 'File Manager',
+          key: 'add-product',
+          icon: <PlusOutlined />,
+          label: 'Add Product',
         },
         {
-          key: '23',
-          label: 'Mail',
-        },
-        {
-          key: '24',
-          label: 'Projects',
+          key: 'category-list',
+          icon: <TagsOutlined />,
+          label: 'Category List',
         },
       ],
     },
     {
-      key: '3',
-      icon: <PieChartOutlined />,
-      label: 'Components',
+      key: 'orders',
+      icon: <ShoppingCartOutlined />,
+      label: 'Order',
       children: [
         {
-          key: '31',
-          label: 'General',
+          key: 'order-list',
+          label: 'Order List',
         },
         {
-          key: '32',
-          label: 'Navigation',
-        },
-        {
-          key: '33',
-          label: 'Data Display',
-        },
-        {
-          key: '34',
-          label: 'Others',
+          key: 'order-tracking',
+          label: 'Order Tracking',
         },
       ],
     },
-
     {
-      key: 'book-room',
-      icon: <WhatsAppOutlined />,
-      label: <Link to="book-room">Book Room</Link>,
+      key: 'customers',
+      icon: <UserOutlined />,
+      label: 'Customer',
+      children: [
+        {
+          key: 'customer-list',
+          label: 'Customer List',
+        },
+        {
+          key: 'customer-groups',
+          label: 'Customer Groups',
+        },
+      ],
+    },
+    {
+      key: 'reviews',
+      icon: <StarOutlined />,
+      label: 'Manage Reviews',
+    },
+    {
+      key: 'referrals',
+      icon: <ShareAltOutlined />,
+      label: 'Referrals',
+    },
+    {
+      key: 'settings',
+      icon: <SettingOutlined />,
+      label: 'Settings',
+      children: [
+        {
+          key: 'profile-settings',
+          label: 'Profile Settings',
+        },
+        {
+          key: 'system-settings',
+          label: 'System Settings',
+        },
+      ],
     },
   ]
   return (
@@ -89,8 +102,8 @@ function Sidebar() {
       <Menu
         mode="inline"
         items={items}
-        defaultSelectedKeys={['/']}
-        defaultOpenKeys={['1']}
+        defaultSelectedKeys={['product-list']}
+        defaultOpenKeys={['products']}
       />
     </>
   )
