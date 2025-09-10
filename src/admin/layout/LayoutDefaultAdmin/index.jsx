@@ -11,6 +11,8 @@ import {
 import { useState } from 'react'
 import { Outlet } from 'react-router-dom'
 import Notification from '../../components/Notification'
+import Sidebar from '../../components/Sidebar'
+
 function LayoutDefault() {
   const { Footer, Sider, Content } = Layout
   const [collapsed, setCollapsed] = useState(false)
@@ -52,13 +54,21 @@ function LayoutDefault() {
         </header>
         <Layout>
           <Sider theme="light" collapsed={collapsed}>
-            siderbar
+            <Sidebar />
           </Sider>
           <Content>
             <Outlet />
           </Content>
         </Layout>
-        <Footer>Footer</Footer>
+        <Footer
+          style={{
+            background: '#fff', // light
+            color: '#000',
+            textAlign: 'center',
+          }}
+        >
+          Footer
+        </Footer>
       </Layout>
     </>
   )
