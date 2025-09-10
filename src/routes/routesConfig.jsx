@@ -1,22 +1,25 @@
-import LayoutDefault from '../layout/LayoutDefault'
-import Home from '../../client/pages/Home'
-import Hotel from '../../client/pages/Hotel'
-import Tour from '../../client/pages/Tour'
-import About from '../../client/pages/About'
-import Blog from '../../client/pages/Blog'
-import BlogAll from '../../client/pages/Blog/BlogAll'
-import BlogDetail from '../../client/pages/Blog/BlogDetail'
-import BlogNews from '../../client/pages/Blog/BlogNews'
-import BlogRelated from '../../client/pages/Blog/BlogRelated'
-import Contact from '../../client/pages/Contact'
-import Error404 from '../../client/pages/Error404'
-import PrivateRoutes from '../components/PrivateRoutes'
-import InForUser from '../../client/pages/InForUser'
-import Login from '../../client/pages/Login'
-import ToursByCategory from '../pages/Tour/ToursByCategory'
-import TourAll from '../pages/Tour/TourAll'
-import TourDetail from '../pages/Tour/TourDetail'
-import Cart from '../pages/Cart'
+import LayoutDefault from '../client/layout/LayoutDefault'
+import Home from '../client/pages/Home'
+import Hotel from '../client/pages/Hotel'
+import Tour from '../client/pages/Tour'
+import About from '../client/pages/About'
+import Blog from '../client/pages/Blog'
+import BlogAll from '../client/pages/Blog/BlogAll'
+import BlogDetail from '../client/pages/Blog/BlogDetail'
+import BlogNews from '../client/pages/Blog/BlogNews'
+import BlogRelated from '../client/pages/Blog/BlogRelated'
+import Contact from '../client/pages/Contact'
+import Error404 from '../client/pages/Error404'
+import PrivateRoutes from '../client/components/PrivateRoutes'
+import InForUser from '../client/pages/InForUser'
+import Login from '../client/pages/Login'
+import ToursByCategory from '../client/pages/Tour/ToursByCategory'
+import TourAll from '../client/pages/Tour/TourAll'
+import TourDetail from '../client/pages/Tour/TourDetail'
+import Cart from '../client/pages/Cart'
+
+import LayoutDefaultAdmin from '../admin/layout/LayoutDefaultAdmin'
+import Dashboard from '../admin/pages/Dashboard'
 
 export const routes = [
   {
@@ -96,6 +99,18 @@ export const routes = [
       {
         path: 'cart',
         element: <Cart />,
+      },
+    ],
+  },
+
+  // part route admin
+  {
+    path: '/admin',
+    element: <LayoutDefaultAdmin />,
+    children: [
+      {
+        part: '/admin',
+        element: <Dashboard />,
       },
     ],
   },

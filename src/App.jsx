@@ -1,6 +1,6 @@
+import AllRoute from './routes'
 import './styles/main.scss'
 
-import AllRoute from './client/components/AllRoute'
 function App() {
   return (
     <>

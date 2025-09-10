@@ -21,14 +21,15 @@ function ProductList(props) {
                   <div className="product-card__bottom">
                     <div className="product-card__price">
                       <span className="product-card__price--current">
-                        ₹{' '}
+                        {' '}
                         {(
                           (tour.price * (100 - tour.discount)) /
                           100
-                        ).toLocaleString()}
+                        ).toLocaleString()}{' '}
+                        đ
                       </span>
                       <span className="product-card__price--old">
-                        ₹ {tour.price.toLocaleString()}
+                        {tour.price.toLocaleString()} đ
                       </span>
                     </div>
                     {tour.discount > 0 && (

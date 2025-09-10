@@ -1,0 +1,31 @@
+.header-admin {
+  display: flex;
+  background-color: white;
+  border-bottom: 1px solid #ddd;
+
+  &__logo {
+    width: 200px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-right: 1px solid #ddd;
+    transition: all 0.2s;
+
+    &--collapsed {
+      width: 80px !important;
+      transition: all 0.2s;
+    }
+  }
+
+  &__nav {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex: 1;
+    margin-left: 20px;
+    font-size: 20px;
+  }
+  &__left {
+    display: flex;
+  }
+}
